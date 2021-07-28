@@ -1,8 +1,24 @@
 import { ActionType } from '../action-types';
 import { Action } from '../actions/index';
 
-const listOfTodos = (state = [], action: Action) => {
-    switch(action.type) {
+interface TodoListState {
+    initialState: {
+        completed: boolean,
+        createdAt: string,
+        id: string,
+        todo: string
+    }
+}
+
+const initialState: TodoListState["initialState"] = {
+    completed: false,
+    createdAt: '',
+    id: '',
+    todo: ''
+}
+
+const listOfTodos = (state = initialState, action: Action) => {
+    switch (action.type) {
         case ActionType.listOfTodos:
             return action.payload;
         default:
