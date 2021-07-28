@@ -53,11 +53,16 @@ export default function App() {
         />
         <button type="submit">add</button>
       </form>
-      {listOfTodos.map((todo) => (
-        <h4 key={todo.id}>
-          {todo.todo}
-        </h4>
-      ))}
+      {
+        listOfTodos ?
+          listOfTodos.map((todo) => (
+            <h4 key={todo.id}>
+              {todo.todo}
+            </h4>
+          ))
+          :
+          <h4>Add a todo!</h4>
+      }
     </div>
   );
 }
