@@ -1,4 +1,4 @@
-# AWS / TypeSCript / React - Todo List
+# AWS / TypeScript / React - Todo List
 
 ## Description
 
