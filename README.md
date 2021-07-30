@@ -1,4 +1,4 @@
-# PROJECT NAME
+# AWS / TypeSCript / React - Todo List
 
 ## Description
 
