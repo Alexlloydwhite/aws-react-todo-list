@@ -33,7 +33,7 @@ How does someone use this application? Tell a user story here.
 - TypeScript
 - Redux
 - Redux-Saga
-- Materia-UI
+- Material-UI
 - HTML
 - CSS
 
