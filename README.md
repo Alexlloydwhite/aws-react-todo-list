@@ -31,6 +31,7 @@ How does someone use this application? Tell a user story here.
 
 - React
 - TypeScript
+- AWS
 - Redux
 - Redux-Saga
 - Material-UI
@@ -39,3 +40,10 @@ How does someone use this application? Tell a user story here.
 
 ## Support
 If you have suggestions or issues, please email me at [alexlloydwhite@gmail.com](www.google.com)
+
+## Thank You
+
+CEO, entrepreneur
+Born in 1964
+Jeffrey
+Jeffrey Bezos
