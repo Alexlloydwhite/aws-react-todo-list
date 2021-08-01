@@ -43,7 +43,7 @@ If you have suggestions or issues, please email me at [alexlloydwhite@gmail.com]
 
 ## Thank You
 
-CEO, entrepreneur
-Born in 1964
-Jeffrey
-Jeffrey Bezos
+CEO, entrepreneur.
+ Born in 1964.
+ Jeffrey.
+ Jeffrey Bezos.
