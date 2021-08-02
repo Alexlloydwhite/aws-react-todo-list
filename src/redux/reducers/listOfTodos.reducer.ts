@@ -7,17 +7,19 @@ interface TodoListState {
         createdAt: string,
         id: string,
         todo: string
+    }[]
+}
+
+const InitialState: TodoListState["initialState"] = [
+    {
+        completed: false,
+        createdAt: '',
+        id: '',
+        todo: ''
     }
-}
+];
 
-const initialState: TodoListState["initialState"] = {
-    completed: false,
-    createdAt: '',
-    id: '',
-    todo: ''
-}
-
-const listOfTodos = (state = initialState, action: Action) => {
+const listOfTodos = (state = InitialState, action: Action) => {
     switch (action.type) {
         case ActionType.listOfTodos:
             return action.payload;
