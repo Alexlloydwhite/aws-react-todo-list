@@ -6,25 +6,22 @@ export default function TodoTable() {
     const dispatch = useDispatch();
 
     const todoList: string[] = useSelector((state: RootState) => {
-        return state.todos
+        return state.todos;
     });
-
-    console.log(todoList);
 
     useEffect(() => {
         dispatch({
             type: 'FETCH_TODOS'
         });
     }, []);
+
     return (
         <div>
-            {
-                todoList.map((todo: any) => (
-                    <h4 key={todo.id}>
-                        {todo.todo}
-                    </h4>
-                ))
-            }
+            {todoList.map((todo: any) => (
+                <h4 key={todo.id}>
+                    {todo.todo}
+                </h4>
+            ))}
         </div>
     );
 }
