@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 export default function AddTodo() {
     const dispatch = useDispatch();
 
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState<string>('');
 
     const submitTodo = (e: any): void => {
         e.preventDefault();
@@ -13,6 +13,7 @@ export default function AddTodo() {
                 type: 'ADD_TODO',
                 payload: inputValue
             });
+            setInputValue('');
         }
     }
 
