@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/_rootReducer';
 
@@ -13,7 +13,7 @@ export default function TodoTable() {
         dispatch({
             type: 'FETCH_TODOS'
         });
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>
