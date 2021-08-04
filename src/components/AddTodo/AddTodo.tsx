@@ -4,8 +4,8 @@ export default function AddTodo() {
 
     const [inputValue, setInputValue] = useState('');
 
-    const submitTodo = () => {
-        console.log('Clicked submit!');
+    const submitTodo = (e: any) => {
+        e.preventDefault();
     }
 
     return (
