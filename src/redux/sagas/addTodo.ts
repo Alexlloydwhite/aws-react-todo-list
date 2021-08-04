@@ -2,10 +2,12 @@ import { takeEvery, call, put } from "@redux-saga/core/effects";
 import { ActionType } from '../action-types/index';
 import axios from 'axios';
 
+// Watcher
 export function* addTodo() {
     yield takeEvery(ActionType.addTodo, createWorker);
 }
 
+// Worker
 export function* createWorker(action: any) {
     try {
         yield call(
@@ -14,7 +16,5 @@ export function* createWorker(action: any) {
             { todo: action.payload }
         );
         yield put({ type: ActionType.getListOfTodos });
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (err) { console.log(err); }
 }
