@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/_rootReducer';
+import { ActionType } from '../../redux/action-types/index';
 import './TodoTable.css';
 
 export default function TodoTable() {
@@ -12,9 +13,13 @@ export default function TodoTable() {
 
     useEffect(() => {
         dispatch({
-            type: 'FETCH_TODOS'
+            type: ActionType.getListOfTodos
         });
     }, [dispatch]);
+
+    const deleteTask = (id: string) => {
+        console.log(id);
+    }
 
     return (
         <div>
@@ -33,7 +38,7 @@ export default function TodoTable() {
                             <td>{todo.todo}</td>
                             <td>{todo.createdAt}</td>
                             <td><button>Complete</button></td>
-                            <td><button>Delete</button></td>
+                            <td><button onClick={() => deleteTask(todo.id)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
