@@ -4,12 +4,12 @@ export default function AddTodo() {
 
     const [inputValue, setInputValue] = useState('');
 
-    const submitTodo = (e: any) => {
+    const submitTodo = (e: React.FormEvent<HTMLInputElement>): void => {
         e.preventDefault();
     }
 
     return (
-        <form onSubmit={submitTodo}>
+        <form onSubmit={(e) => submitTodo}>
             <input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
