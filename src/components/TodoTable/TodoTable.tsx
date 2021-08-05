@@ -23,7 +23,7 @@ export default function TodoTable() {
 
     return (
         <div>
-            <table>
+            <table className="center">
                 <thead>
                     <tr>
                         <th>Task</th>
