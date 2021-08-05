@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import './AddTodo.css';
 
 export default function AddTodo() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export default function AddTodo() {
     }
 
     return (
-        <form onSubmit={submitTodo}>
+        <form onSubmit={submitTodo} className="todoform">
             <input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
