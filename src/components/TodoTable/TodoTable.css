@@ -17,3 +17,33 @@ tr:nth-child(even) {
     margin-left: auto;
     margin-right: auto;
 }
+
+button {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.complete {
+    border-color: #04AA6D;
+    color: green;
+}
+
+.complete:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.delete {
+    border-color: #f44336;
+    color: red
+}
+
+.delete:hover {
+    background: #f44336;
+    color: white;
+}

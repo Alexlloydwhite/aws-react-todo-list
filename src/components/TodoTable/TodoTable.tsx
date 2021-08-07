@@ -37,8 +37,8 @@ export default function TodoTable() {
                         <tr key={todo.id}>
                             <td>{todo.todo}</td>
                             <td>{todo.createdAt}</td>
-                            <td><button>Complete</button></td>
-                            <td><button onClick={() => deleteTask(todo.id)}>Delete</button></td>
+                            <td><button className="complete">Complete</button></td>
+                            <td><button className="delete" onClick={() => deleteTask(todo.id)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
