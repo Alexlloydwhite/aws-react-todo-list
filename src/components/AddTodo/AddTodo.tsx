@@ -6,6 +6,7 @@ export default function AddTodo() {
     const dispatch = useDispatch();
 
     const [inputValue, setInputValue] = useState<string>('');
+    const [error, setError] = useState<boolean>(false);
 
     const submitTodo = (e: any): void => {
         e.preventDefault();
@@ -15,6 +16,10 @@ export default function AddTodo() {
                 payload: inputValue
             });
             setInputValue('');
+            setError(false);
+        } 
+        if (!inputValue) {
+            setError(true);
         }
     }
 
@@ -26,6 +31,7 @@ export default function AddTodo() {
                 placeholder="Add a new task"
             />
             <button className="default" type="submit">ADD</button>
+            {error && <h4>Cannot add an empty task</h4>}
         </form>
     );
 }
