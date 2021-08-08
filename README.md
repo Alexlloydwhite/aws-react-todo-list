@@ -38,9 +38,9 @@ How does someone use this application? Tell a user story here.
     - CloudWatch
 - Redux
 - Redux-Saga
-- Material-UI
-- HTML
-- CSS
+- HTML5
+- CSS3
+- See package.json for full list of dependencies!
 
 ## Support
 If you have suggestions or issues, please email me at [alexlloydwhite@gmail.com](www.google.com)
