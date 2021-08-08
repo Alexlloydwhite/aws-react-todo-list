@@ -23,7 +23,7 @@ export default function TodoTable() {
     }
 
     return (
-        <div>
+        <div style={{ overflowX: 'auto' }}>
             <table className="center">
                 <thead>
                     <tr>
