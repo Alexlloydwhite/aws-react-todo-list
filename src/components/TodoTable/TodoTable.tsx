@@ -19,7 +19,6 @@ export default function TodoTable() {
     }, [dispatch]);
 
     const deleteTask = (id: string) => {
-        console.log(id);
         dispatch({
             type: ActionType.deleteTask,
             id: id
