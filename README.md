@@ -32,6 +32,10 @@ How does someone use this application? Tell a user story here.
 - React
 - TypeScript
 - AWS
+    - Lambda
+    - S3 
+    - DynamoDB
+    - CloudWatch
 - Redux
 - Redux-Saga
 - Material-UI
