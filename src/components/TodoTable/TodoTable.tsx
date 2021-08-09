@@ -54,14 +54,25 @@ export default function TodoTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {sortedTodoList.map((todo: TodoList) => (
-                            <tr key={todo.id}>
-                                <td>{todo.todo}</td>
-                                <td>{moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
-                                <td><button className="complete">Complete</button></td>
-                                <td><button className="delete" onClick={() => deleteTask(todo.id)}>Delete</button></td>
-                            </tr>
-                        ))}
+                        {
+                            sortedTodoList.map((todo: TodoList) => (
+                                <tr key={todo.id}>
+                                    <td>{todo.todo}</td>
+                                    <td>
+                                        {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
+                                    </td>
+                                    <td><button className="complete">Complete</button></td>
+                                    <td>
+                                        <button
+                                            className="delete"
+                                            onClick={() => deleteTask(todo.id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             }
