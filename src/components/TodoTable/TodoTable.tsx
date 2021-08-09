@@ -19,7 +19,7 @@ export default function TodoTable() {
         return dateA > dateB ? 1 : -1;
     }
 
-    todoList.sort(sortList);
+    const sortedTodoList = todoList.sort(sortList);
 
     useEffect(() => {
         dispatch({
@@ -36,26 +36,28 @@ export default function TodoTable() {
 
     return (
         <div style={{ overflowX: 'auto' }}>
-            <table className="center">
-                <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Created</th>
-                        <th>Completed?</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {todoList.map((todo: any) => (
-                        <tr key={todo.id}>
-                            <td>{todo.todo}</td>
-                            <td>{moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
-                            <td><button className="complete">Complete</button></td>
-                            <td><button className="delete" onClick={() => deleteTask(todo.id)}>Delete</button></td>
+            {sortedTodoList &&
+                <table className="center">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Created</th>
+                            <th>Completed?</th>
+                            <th>Delete</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {sortedTodoList.map((todo: any) => (
+                            <tr key={todo.id}>
+                                <td>{todo.todo}</td>
+                                <td>{moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
+                                <td><button className="complete">Complete</button></td>
+                                <td><button className="delete" onClick={() => deleteTask(todo.id)}>Delete</button></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            }
         </div>
     );
 }
