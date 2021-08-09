@@ -5,10 +5,17 @@ import { ActionType } from '../../redux/action-types/index';
 import './TodoTable.css';
 import moment from 'moment';
 
+interface TodoList {
+    completed: boolean,
+    createdAt: string,
+    todo: string,
+    id: string
+}
+
 export default function TodoTable() {
     const dispatch = useDispatch();
 
-    const todoList: string[] = useSelector((state: RootState) => {
+    const todoList: TodoList[] = useSelector((state: RootState) => {
         return state.todos;
     });
 
@@ -47,7 +54,7 @@ export default function TodoTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {sortedTodoList.map((todo: any) => (
+                        {sortedTodoList.map((todo: TodoList) => (
                             <tr key={todo.id}>
                                 <td>{todo.todo}</td>
                                 <td>{moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
