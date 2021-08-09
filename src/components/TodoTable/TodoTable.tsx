@@ -12,6 +12,15 @@ export default function TodoTable() {
         return state.todos;
     });
 
+    const sortList = (a: any, b: any) => {
+        const dateA = new Date(a.createdAt).getTime();
+        const dateB = new Date(b.createdAt).getTime();
+
+        return dateA > dateB ? 1 : -1;
+    }
+
+    todoList.sort(sortList);
+
     useEffect(() => {
         dispatch({
             type: ActionType.getListOfTodos
