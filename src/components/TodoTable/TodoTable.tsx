@@ -54,8 +54,7 @@ export default function TodoTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            sortedTodoList.map((todo: TodoList) => (
+                        {sortedTodoList.map((todo: TodoList) => (
                                 <tr key={todo.id}>
                                     <td>{todo.todo}</td>
                                     <td>
@@ -71,8 +70,7 @@ export default function TodoTable() {
                                         </button>
                                     </td>
                                 </tr>
-                            ))
-                        }
+                            ))}
                     </tbody>
                 </table>
             }
