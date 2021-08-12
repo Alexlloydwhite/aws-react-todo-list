@@ -14,6 +14,10 @@ interface TodoList {
     id: string
 }
 
+export interface IModalState {
+    modalState: boolean
+}
+
 export default function TodoTable() {
     const dispatch = useDispatch();
 
@@ -36,7 +40,7 @@ export default function TodoTable() {
         });
     }, [dispatch]);
 
-    const [openDeleteModal, setOpenDeleteModal] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
 
     const deleteTask = (id: string) => {
         setOpenDeleteModal(true);
