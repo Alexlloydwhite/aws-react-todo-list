@@ -1,13 +1,22 @@
+import React from 'react';
 import './DeleteModal.css';
 
-export default function DeleteModal() {
+interface IProps {
+    openDeleteModal: boolean
+    setOpenDeleteModal: React.Dispatch<React.SetStateAction<IProps["openDeleteModal"]>>
+}
+
+const DeleteModal: React.FC<IProps> = ({ openDeleteModal, setOpenDeleteModal }) => {
     return (
         <div className="modal">
             <div className="modal-content">
                 <div className="container">
                     <h1>Modal Box</h1>
+                    <button onClick={() => setOpenDeleteModal(false)}>Close</button>
                 </div>
             </div>
         </div>
     );
 }
+
+export default DeleteModal;
