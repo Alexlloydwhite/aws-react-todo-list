@@ -21,10 +21,20 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
     const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
 
     const dispatch = useDispatch();
-    const toggleComplete = (id: string) => {
+
+    const toggleComplete = (todo: IProps["todo"]) => {
+        let toggle;
+        if (todo.completed === true) {
+            toggle = false;
+        } 
+        if (todo.completed === false) {
+            toggle = true;
+        }
+
         dispatch({
             type: ActionType.toggleComplete,
-            id: id
+            id: todo.id,
+            payload: toggle
         });
     }
 
@@ -36,14 +46,15 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                         <input
                             className="input-checkbox"
                             type="checkbox"
-                            checked
+                            onClick={() => toggleComplete(todo)}
+                            defaultChecked
                         />
                     </td>
                     : <td>
                         <input
                             className="input-checkbox"
                             type="checkbox"
-                            onClick={() => toggleComplete(todo.id)}
+                            onClick={() => toggleComplete(todo)}
                         />
                     </td>
                 }

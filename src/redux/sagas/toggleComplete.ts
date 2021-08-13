@@ -11,7 +11,9 @@ export function* createWorker(action: any) {
     try {
         yield call(
             axios.put,
-            `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todo/${action.id}`
+            `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todo/${action.id}`,
+            { completed: action.payload }
         )
+        yield put({ type: ActionType.getListOfTodos });
     } catch (err) { console.log(err); }
 }
