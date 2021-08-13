@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+// React
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// Types
 import { RootState } from '../../redux/reducers/_rootReducer';
 import { ActionType } from '../../redux/action-types/index';
+// Local Imports
 import './TodoTable.css';
-
 import TodoRow from './TodoRow';
 
 export interface TodoList {
@@ -50,7 +52,7 @@ export default function TodoTable() {
                     </thead>
                     <tbody>
                         {sortedTodoList.map((todo: TodoList) => (
-                            <TodoRow todo={todo} />
+                            <TodoRow todo={todo} key={todo.id} />
                         ))}
                     </tbody>
                 </table>
