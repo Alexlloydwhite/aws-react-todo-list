@@ -3,19 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/_rootReducer';
 import { ActionType } from '../../redux/action-types/index';
 import './TodoTable.css';
-import moment from 'moment';
 
-import DeleteModal from '../DeleteModal/DeleteModal';
+import TodoRow from './TodoRow';
 
-interface TodoList {
+export interface TodoList {
     completed: boolean,
     createdAt: string,
     todo: string,
     id: string
-}
-
-export interface IModalState {
-    modalState: boolean
 }
 
 export default function TodoTable() {
@@ -40,15 +35,6 @@ export default function TodoTable() {
         });
     }, [dispatch]);
 
-    const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
-
-    const deleteTask = (id: string) => {
-        setOpenDeleteModal(true);
-        // dispatch({
-        //     type: ActionType.deleteTask,
-        //     id: id
-        // });
-    }
 
     return (
         <div style={{ overflowX: 'auto' }}>
@@ -64,29 +50,10 @@ export default function TodoTable() {
                     </thead>
                     <tbody>
                         {sortedTodoList.map((todo: TodoList) => (
-                            <tr key={todo.id}>
-                                <td>{todo.todo}</td>
-                                <td>
-                                    {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
-                                </td>
-                                <td><button className="complete">Complete</button></td>
-                                <td>
-                                    <button
-                                        className="delete"
-                                        onClick={() => deleteTask(todo.id)}
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
+                            <TodoRow todo={todo} />
                         ))}
                     </tbody>
                 </table>
-            }
-            {openDeleteModal &&
-                <DeleteModal
-                    setOpenDeleteModal={setOpenDeleteModal}
-                />
             }
         </div>
     );
