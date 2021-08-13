@@ -1,6 +1,10 @@
+// React
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+// CSS
 import './AddTodo.css';
+// Types
+import { ActionType } from '../../redux/action-types';
 
 export default function AddTodo() {
     const dispatch = useDispatch();
@@ -12,7 +16,7 @@ export default function AddTodo() {
         e.preventDefault();
         if (inputValue) {
             dispatch({
-                type: 'ADD_TODO',
+                type: ActionType.addTodo,
                 payload: inputValue
             });
             setInputValue('');
