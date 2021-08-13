@@ -10,13 +10,21 @@ const DeleteModal: React.FC<IProps> = ({ setOpenDeleteModal }) => {
     return (
         <div className="modal">
             <div className="modal-content">
-                <span
-                    className="close-btn"
-                    onClick={() => setOpenDeleteModal(false)}
-                >
-                    &times;
-                </span>
-                <p>Modal</p>
+                <h3>Delete task?</h3>
+                <h5>Once this task is deleted, you will be unable to retrieve it</h5>
+                <div className="btn-group">
+                    <button
+                        className="cancel-btn"
+                        onClick={() => setOpenDeleteModal(false)}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        onClick={() => setOpenDeleteModal(false)}
+                    >
+                        Delete
+                    </button>
+                </div>
             </div>
         </div>
     );

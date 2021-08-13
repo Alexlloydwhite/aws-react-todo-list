@@ -15,23 +15,25 @@
     background-color: white;
     padding: 20px;
     margin: auto;
-    width: 75%;
+    width: 30%;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
 }
 
-.close-btn {
-    float: right;
-    color: lightgray;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
+@media only screen and (max-width: 800px) {
+    .modal-content {
+        width: 75%;
+    }
 }
 
-.close-btn:hover {
-    color: darkgray;
+.cancel-btn {
+    margin-right: 10px;
+}
+
+.btn-group {
+    text-align: right;
 }
 
 @-webkit-keyframes animatetop {
