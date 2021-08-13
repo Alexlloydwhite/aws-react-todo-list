@@ -23,14 +23,8 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
     const dispatch = useDispatch();
 
     const toggleComplete = (todo: IProps["todo"]) => {
-        let toggle;
-        if (todo.completed === true) {
-            toggle = false;
-        } 
-        if (todo.completed === false) {
-            toggle = true;
-        }
-
+        // Backwards ternary ;P
+        const toggle = todo.completed ? false : true;
         dispatch({
             type: ActionType.toggleComplete,
             id: todo.id,
