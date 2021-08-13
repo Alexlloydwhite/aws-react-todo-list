@@ -1,7 +1,8 @@
 table {
-    border: solid grey 2px;
+    border: solid grey 1px;
     border-radius: 5px;
     background: white;
+    padding: 15px;
 }
 
 th,
