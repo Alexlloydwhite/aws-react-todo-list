@@ -13,13 +13,6 @@ interface IProps {
 
 const TodoRow: React.FC<IProps> = ({ todo }) => {
     const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
-    const deleteTask = (id: string) => {
-        setOpenDeleteModal(true);
-        // dispatch({
-        //     type: ActionType.deleteTask,
-        //     id: id
-        // });
-    }
 
     return (
         <>
@@ -32,7 +25,7 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                 <td>
                     <button
                         className="delete"
-                        onClick={() => deleteTask(todo.id)}
+                        onClick={() => setOpenDeleteModal(true)}
                     >
                         Delete
                     </button>
