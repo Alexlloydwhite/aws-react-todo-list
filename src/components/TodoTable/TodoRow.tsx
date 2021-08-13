@@ -20,13 +20,10 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
             <tr key={todo.id}>
                 {todo.completed ?
                     <td><button className="complete">Complete</button></td>
-                    :
-                    <td><input type="checkbox" /></td>
+                    : <td><input className="input-checkbox" type="checkbox" /></td>
                 }
                 <td>{todo.todo}</td>
-                <td>
-                    {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
-                </td>
+                <td>{moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
                 <td>
                     <button
                         className="delete"
@@ -36,8 +33,7 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                     </button>
                 </td>
             </tr>
-            {
-                openDeleteModal &&
+            {openDeleteModal &&
                 <DeleteModal
                     setOpenDeleteModal={setOpenDeleteModal}
                     todo={todo}

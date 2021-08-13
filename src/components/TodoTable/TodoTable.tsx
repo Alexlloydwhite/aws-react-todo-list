@@ -42,7 +42,7 @@ export default function TodoTable() {
                 <table className="center">
                     <thead>
                         <tr>
-                            <th>Completed?</th>
+                            <th>&nbsp;</th>
                             <th>Task</th>
                             <th>Created</th>
                             <th>Delete</th>
