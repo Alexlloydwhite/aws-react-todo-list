@@ -18,15 +18,15 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
     return (
         <>
             <tr key={todo.id}>
-                <td>{todo.todo}</td>
-                <td>
-                    {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
-                </td>
                 {todo.completed ?
                     <td><button className="complete">Complete</button></td>
                     :
                     <td><input type="checkbox" /></td>
                 }
+                <td>{todo.todo}</td>
+                <td>
+                    {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
+                </td>
                 <td>
                     <button
                         className="delete"
