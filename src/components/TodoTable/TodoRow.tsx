@@ -42,6 +42,7 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                 openDeleteModal &&
                 <DeleteModal
                     setOpenDeleteModal={setOpenDeleteModal}
+                    todo={todo}
                 />
             }
         </>
