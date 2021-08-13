@@ -10,10 +10,13 @@ const DeleteModal: React.FC<IProps> = ({ setOpenDeleteModal }) => {
     return (
         <div className="modal">
             <div className="modal-content">
-                <div className="container">
-                    <h1>Modal Box</h1>
-                    <button onClick={() => setOpenDeleteModal(false)}>Close</button>
-                </div>
+                <span
+                    className="close-btn"
+                    onClick={() => setOpenDeleteModal(false)}
+                >
+                    &times;
+                </span>
+                <p>Modal</p>
             </div>
         </div>
     );
