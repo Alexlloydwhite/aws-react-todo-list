@@ -41,14 +41,9 @@ export default function TodoTable() {
     return (
         <div style={{ overflowX: 'auto' }}>
             {sortedTodoList &&
-                <table className="center">
+                <table cellSpacing="0" className="center">
                     <thead>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>Task</th>
-                            <th>Created</th>
-                            <th>Delete</th>
-                        </tr>
+                        <h2 style={{ marginLeft: '10px' }}>Todo List</h2>
                     </thead>
                     <tbody>
                         {sortedTodoList.map((todo: TodoList) => (
