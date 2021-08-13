@@ -6,6 +6,7 @@ import moment from 'moment';
 import DeleteModal from '../DeleteModal/DeleteModal';
 // Types
 import { TodoList as Props } from '../TodoTable/TodoTable';
+import { ActionType } from '../../redux/action-types';
 
 export interface IModalState {
     modalState: boolean
@@ -21,7 +22,10 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
 
     const dispatch = useDispatch();
     const toggleComplete = (id: string) => {
-        console.log(id);
+        dispatch({
+            type: ActionType.toggleComplete,
+            id: id
+        });
     }
 
     return (
