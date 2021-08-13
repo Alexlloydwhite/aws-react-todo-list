@@ -1,7 +1,10 @@
+// React
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
+// Local Imports
 import DeleteModal from '../DeleteModal/DeleteModal';
+// Types
 import { TodoList as Props } from '../TodoTable/TodoTable';
 
 export interface IModalState {
