@@ -25,7 +25,7 @@ const DeleteModal: React.FC<IProps> = ({ todo, setOpenDeleteModal }) => {
         <div className="modal">
             <div className="modal-content">
                 <h3>Delete task?</h3>
-                <h5>Once this task is deleted, you will be unable to retrieve it</h5>
+                <p>Once this task is deleted, you will be unable to retrieve it</p>
                 <div className="btn-group">
                     <button
                         className="btn cancel"
