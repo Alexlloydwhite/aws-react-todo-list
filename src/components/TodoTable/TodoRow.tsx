@@ -12,6 +12,7 @@ interface IProps {
 }
 
 const TodoRow: React.FC<IProps> = ({ todo }) => {
+
     const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
 
     return (
@@ -21,7 +22,11 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                 <td>
                     {moment(todo.createdAt).format('MMMM Do YYYY, h:mm a')}
                 </td>
-                <td><button className="complete">Complete</button></td>
+                {todo.completed ?
+                    <td><button className="complete">Complete</button></td>
+                    :
+                    <td><input type="checkbox" /></td>
+                }
                 <td>
                     <button
                         className="delete"
