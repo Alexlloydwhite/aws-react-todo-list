@@ -2,7 +2,7 @@ import { ActionType } from '../action-types/index';
 
 interface TodoAction {
     type: ActionType.listOfTodos,
-    payload: String
+    payload: string
 }
 
 export type Action = TodoAction;
