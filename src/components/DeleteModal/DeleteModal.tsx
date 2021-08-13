@@ -3,11 +3,10 @@ import './DeleteModal.css';
 import { IModalState as Props } from '../TodoTable/TodoTable';
 
 interface IProps {
-    openDeleteModal: Props["modalState"]
     setOpenDeleteModal: React.Dispatch<React.SetStateAction<Props["modalState"]>>
 }
 
-const DeleteModal: React.FC<IProps> = ({ openDeleteModal, setOpenDeleteModal }) => {
+const DeleteModal: React.FC<IProps> = ({ setOpenDeleteModal }) => {
     return (
         <div className="modal">
             <div className="modal-content">

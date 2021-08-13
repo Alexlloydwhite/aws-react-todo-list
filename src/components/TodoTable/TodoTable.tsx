@@ -85,7 +85,6 @@ export default function TodoTable() {
             }
             {openDeleteModal &&
                 <DeleteModal
-                    openDeleteModal={openDeleteModal}
                     setOpenDeleteModal={setOpenDeleteModal}
                 />
             }
