@@ -32,19 +32,10 @@ button {
     border-radius: 10px;
 }
 
-.complete {
-    border-color: #04AA6D;
-    color: green;
-}
-
-.complete:hover {
-    background-color: #04AA6D;
-    color: white;
-}
-
 .delete {
     border-color: #f44336;
-    color: red
+    color: red;
+    padding: 6px 12px;
 }
 
 .delete:hover {

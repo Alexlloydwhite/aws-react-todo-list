@@ -34,7 +34,7 @@ export default function AddTodo() {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Add a new task"
             />
-            <button className="default" type="submit">Add</button>
+            <button className="add-btn default" type="submit">Add</button>
             {error && <h4>Cannot add an empty task</h4>}
         </form>
     );
