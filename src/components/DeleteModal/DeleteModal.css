@@ -28,8 +28,26 @@
     }
 }
 
-.cancel-btn {
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #eee;
+}
+
+.cancel {
     margin-right: 10px;
+    color: black;
+}
+
+.delete {
+    color: red;
 }
 
 .btn-group {

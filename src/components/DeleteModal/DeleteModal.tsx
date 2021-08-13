@@ -14,12 +14,13 @@ const DeleteModal: React.FC<IProps> = ({ setOpenDeleteModal }) => {
                 <h5>Once this task is deleted, you will be unable to retrieve it</h5>
                 <div className="btn-group">
                     <button
-                        className="cancel-btn"
+                        className="btn cancel"
                         onClick={() => setOpenDeleteModal(false)}
                     >
                         Cancel
                     </button>
                     <button
+                        className="btn delete"
                         onClick={() => setOpenDeleteModal(false)}
                     >
                         Delete
