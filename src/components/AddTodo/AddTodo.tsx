@@ -1,13 +1,15 @@
 // React
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 // CSS
 import './AddTodo.css';
-// Types
-import { ActionType } from '../../redux/action-types';
+// Redux
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../redux';
 
 export default function AddTodo() {
     const dispatch = useDispatch();
+    const { addTodo } = bindActionCreators(actionCreators, dispatch);
 
     const [inputValue, setInputValue] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
@@ -15,10 +17,7 @@ export default function AddTodo() {
     const submitTodo = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (inputValue) {
-            dispatch({
-                type: ActionType.addTodo,
-                payload: inputValue
-            });
+            addTodo(inputValue);
             setInputValue('');
             setError(false);
         } 

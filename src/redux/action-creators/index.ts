@@ -10,3 +10,12 @@ export const listOfTodos = (list: string) => {
         });
     }
 }
+
+export const addTodo = (todo: string) => {
+    return(dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.addTodo,
+            payload: todo
+        });
+    }
+}

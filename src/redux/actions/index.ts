@@ -5,4 +5,9 @@ interface TodoAction {
     payload: string
 }
 
-export type Action = TodoAction;
+interface AddTodoAction {
+    type: ActionType.addTodo,
+    payload: string
+}
+
+export type Action = TodoAction | AddTodoAction;
