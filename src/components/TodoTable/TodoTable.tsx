@@ -43,7 +43,7 @@ export default function TodoTable() {
             {sortedTodoList &&
                 <table cellSpacing="0" className="center">
                     <thead>
-                        <h2 style={{ marginLeft: '10px' }}>Todo List</h2>
+                        <h2 style={{ marginLeft: '10px' }}>To-do List</h2>
                     </thead>
                     <tbody>
                         {sortedTodoList.map((todo: TodoList) => (
