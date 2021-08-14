@@ -12,7 +12,7 @@ export default function AddTodo() {
     const [inputValue, setInputValue] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
 
-    const submitTodo = (e: any): void => {
+    const submitTodo = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (inputValue) {
             dispatch({
@@ -28,7 +28,7 @@ export default function AddTodo() {
     }
 
     return (
-        <form onSubmit={submitTodo} className="todoform">
+        <form onSubmit={(e) => submitTodo(e)} className="todoform">
             <input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
