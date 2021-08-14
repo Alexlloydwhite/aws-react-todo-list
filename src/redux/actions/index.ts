@@ -10,4 +10,8 @@ interface AddTodoAction {
     payload: string
 }
 
-export type Action = TodoAction | AddTodoAction;
+interface GetTodosAction {
+    type: ActionType.getListOfTodos
+}
+
+export type Action = TodoAction | AddTodoAction | GetTodosAction;

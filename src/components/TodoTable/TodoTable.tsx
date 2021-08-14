@@ -1,9 +1,10 @@
 // React
 import { useEffect } from 'react';
+// Types & Redux
 import { useDispatch, useSelector } from 'react-redux';
-// Types
 import { RootState } from '../../redux/reducers/_rootReducer';
-import { ActionType } from '../../redux/action-types/index';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../redux';
 // Local Imports
 import './TodoTable.css';
 import TodoRow from './TodoRow';
@@ -17,6 +18,16 @@ export interface TodoList {
 
 export default function TodoTable() {
     const dispatch = useDispatch();
+    const { getTodos } = bindActionCreators(actionCreators, dispatch);
+
+    useEffect(() => {
+        getTodos();
+        // Compiler throws error asking to add
+        // getTodos to deps array, doing so 
+        // causes render loop.
+        // So.....
+        // eslint-disable-next-line
+    }, []);
 
     const todoList: TodoList[] = useSelector((state: RootState) => {
         return state.todos;
@@ -30,13 +41,6 @@ export default function TodoTable() {
     }
 
     const sortedTodoList = todoList.sort(sortList);
-
-    useEffect(() => {
-        dispatch({
-            type: ActionType.getListOfTodos
-        });
-    }, [dispatch]);
-
 
     return (
         <div style={{ overflowX: 'auto' }}>
