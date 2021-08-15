@@ -8,7 +8,7 @@ import { actionCreators } from '../../redux';
 // Local Imports
 import './TodoTable.css';
 import TodoRow from './TodoRow';
-import LoadingSpinner from '../Loading/LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 export interface TodoList {
     completed: boolean,

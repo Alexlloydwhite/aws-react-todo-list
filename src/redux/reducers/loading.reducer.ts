@@ -1,14 +1,16 @@
+import { ActionType } from '../action-types';
+
 const initialState = {
     loading: false
 }
 
 const loadingReducer = (state = initialState, action: any) => {
     switch (action.type) {
-        case 'LOADING': 
+        case ActionType.loading: 
             return true;
-        case 'LOADING_SUCCESS':
+        case ActionType.loadingSuccess:
             return false;
-        case 'LOADING_ERROR':
+        case ActionType.loadingError:
             return false;
         default:
             return state;

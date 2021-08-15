@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import listOfTodos from "./listOfTodos.reducer";
-import loadingReducer from "./loadingReducer";
+import loadingReducer from "./loading.reducer";
 
 const rootReducer = combineReducers({
   todos: listOfTodos,
