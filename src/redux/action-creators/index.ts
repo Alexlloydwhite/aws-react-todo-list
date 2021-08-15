@@ -28,3 +28,12 @@ export const toggleTodoComplete = (todoId: string, toggle: boolean) => {
         });
     }
 }
+
+export const deleteTodoTask = (todoId: string) => {
+    return(dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.deleteTask,
+            id: todoId
+        });
+    }
+}

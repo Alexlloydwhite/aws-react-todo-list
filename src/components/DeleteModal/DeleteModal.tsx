@@ -4,6 +4,8 @@ import { IModalState } from '../TodoTable/TodoRow';
 import { TodoList } from '../TodoTable/TodoTable';
 import { useDispatch } from 'react-redux';
 import { ActionType } from '../../redux/action-types/index';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../redux';
 
 interface IProps {
     todo: TodoList
@@ -12,13 +14,11 @@ interface IProps {
 
 const DeleteModal: React.FC<IProps> = ({ todo, setOpenDeleteModal }) => {
     const dispatch = useDispatch();
+    const { deleteTodoTask } = bindActionCreators(actionCreators, dispatch);
     
     const deleteTask = (id: string) => {
         setOpenDeleteModal(false);
-        dispatch({
-            type: ActionType.deleteTask,
-            id: id
-        });
+        deleteTodoTask(id);
     }
 
     return (

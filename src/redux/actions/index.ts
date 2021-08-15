@@ -32,6 +32,11 @@ interface ToggleTodoCompleteAction {
     payload: boolean
 }
 
+interface DeleteTodoAction {
+    type: ActionType.deleteTask,
+    id: string
+}
+
 export type Action = TodoAction | AddTodoAction |
-    GetTodosAction | ToggleTodoCompleteAction |
+    GetTodosAction | ToggleTodoCompleteAction | DeleteTodoAction |
     LoadingAction | LoadingSuccessAction | LoadingErrorAction;
