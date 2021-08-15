@@ -50,9 +50,7 @@ export default function TodoTable() {
     return (
         <div style={{ overflowX: 'auto' }}>
             {loading ?
-                <div className="center">
-                    <LoadingSpinner />
-                </div>
+                <LoadingSpinner />
                 :
                 <table cellSpacing="0" className="center">
                     <thead>
