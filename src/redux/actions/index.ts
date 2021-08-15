@@ -14,4 +14,11 @@ interface GetTodosAction {
     type: ActionType.getListOfTodos
 }
 
-export type Action = TodoAction | AddTodoAction | GetTodosAction;
+interface ToggleTodoCompleteAction {
+    type: ActionType.toggleComplete,
+    id: string,
+    payload: boolean
+}
+
+export type Action = TodoAction | AddTodoAction | 
+GetTodosAction | ToggleTodoCompleteAction;

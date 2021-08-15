@@ -18,3 +18,13 @@ export const getTodos = () => {
         });
     }
 }
+
+export const toggleTodoComplete = (todoId: string, toggle: boolean) => {
+    return(dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.toggleComplete,
+            id: todoId,
+            payload: toggle
+        });
+    }
+}

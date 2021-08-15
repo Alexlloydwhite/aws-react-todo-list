@@ -1,12 +1,13 @@
 // React
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import moment from 'moment';
 // Local Imports
 import DeleteModal from '../DeleteModal/DeleteModal';
-// Types
+// Types & Redux
 import { TodoList as Props } from '../TodoTable/TodoTable';
-import { ActionType } from '../../redux/action-types';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../redux';
 
 export interface IModalState {
     modalState: boolean
@@ -21,15 +22,11 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
     const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
 
     const dispatch = useDispatch();
+    const { toggleTodoComplete } = bindActionCreators(actionCreators, dispatch);
 
     const toggleComplete = (todo: IProps["todo"]) => {
-        // Backwards ternary ;P
         const toggle = todo.completed ? false : true;
-        dispatch({
-            type: ActionType.toggleComplete,
-            id: todo.id,
-            payload: toggle
-        });
+        toggleTodoComplete(todo.id, toggle);
     }
 
     return (
