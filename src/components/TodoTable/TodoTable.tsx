@@ -20,6 +20,12 @@ export default function TodoTable() {
     const dispatch = useDispatch();
     const { getTodos } = bindActionCreators(actionCreators, dispatch);
 
+    const loading = useSelector((state: RootState) => {
+        return state.loading;
+    });
+
+    console.log(loading)
+
     useEffect(() => {
         getTodos();
         // Compiler throws error asking to add
@@ -44,7 +50,9 @@ export default function TodoTable() {
 
     return (
         <div style={{ overflowX: 'auto' }}>
-            {sortedTodoList &&
+            {loading ?
+                <h4 style={{ textAlign: 'center' }}>Loading...</h4>
+                :
                 <table cellSpacing="0" className="center">
                     <thead>
                         <h2 style={{ marginLeft: '10px' }}>To-do List</h2>

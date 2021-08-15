@@ -10,11 +10,16 @@ export function* addTodo() {
 // Worker
 export function* createWorker(action: any) {
     try {
+        yield put({ type: 'LOADING' });
         yield call(
             axios.post,
             'https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/',
             { todo: action.payload }
         );
         yield put({ type: ActionType.getListOfTodos });
-    } catch (err) { console.log(err); }
+        yield put({ type: 'LOADING_SUCCESS' });
+    } catch (error) { 
+        console.log(error); 
+        yield put({ type: 'LOADING_ERROR' });
+    }
 }

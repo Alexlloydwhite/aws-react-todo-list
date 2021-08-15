@@ -10,9 +10,12 @@ export function* fetchTodos(): Generator<StrictEffect> {
 // Worker 
 export function* createWorker() {
     try {
-        // Call API
+        yield put({ type: 'LOADING' });
         const listOfTodos: AxiosResponse = yield call(axios.get, 'https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todos');
-        // Update redux store
         yield put({ type: ActionType.listOfTodos, payload: listOfTodos.data });
-    } catch (err) { console.log(err); }
+        yield put({ type: 'LOADING_SUCCESS' });
+    } catch (error) { 
+        console.log(error); 
+        yield put({ type: 'LOADING_ERROR' });
+    }
 }

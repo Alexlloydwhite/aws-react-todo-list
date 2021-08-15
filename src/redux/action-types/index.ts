@@ -3,5 +3,5 @@ export enum ActionType {
     listOfTodos = 'SET_TODOS',
     addTodo = 'ADD_TODO',
     deleteTask = 'DELETE_TODO',
-    toggleComplete= 'TOGGLE_COMPLETE'
+    toggleComplete= 'TOGGLE_COMPLETE',
 }
