@@ -5,6 +5,18 @@ interface TodoAction {
     payload: string
 }
 
+interface LoadingAction {
+    type: ActionType.loading
+}
+
+interface LoadingSuccessAction {
+    type: ActionType.loadingSuccess
+}
+
+interface LoadingErrorAction {
+    type: ActionType.loadingError
+}
+
 interface AddTodoAction {
     type: ActionType.addTodo,
     payload: string
@@ -21,4 +33,5 @@ interface ToggleTodoCompleteAction {
 }
 
 export type Action = TodoAction | AddTodoAction |
-    GetTodosAction | ToggleTodoCompleteAction;
+    GetTodosAction | ToggleTodoCompleteAction |
+    LoadingAction | LoadingSuccessAction | LoadingErrorAction;
