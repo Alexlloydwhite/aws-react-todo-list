@@ -8,15 +8,15 @@ export function* deleteTodo() {
 
 export function* createWorker(action: any) {
     try {
-        yield put({ type: 'LOADING' });
+        yield put({ type: ActionType.loading });
         yield call(
             axios.delete, 
             `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todo/${action.id}`
         );
         yield put({ type: ActionType.getListOfTodos });
-        yield put({ type: 'LOADING_SUCCESS' });
+        yield put({ type: ActionType.loadingSuccess });
     } catch (error) { 
         console.log(error);
-        yield put({ type: 'LOADING_ERROR' });
+        yield put({ type: ActionType.loadingError });
     }
 }
