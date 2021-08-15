@@ -20,5 +20,5 @@ interface ToggleTodoCompleteAction {
     payload: boolean
 }
 
-export type Action = TodoAction | AddTodoAction | 
-GetTodosAction | ToggleTodoCompleteAction;
+export type Action = TodoAction | AddTodoAction |
+    GetTodosAction | ToggleTodoCompleteAction;
