@@ -8,6 +8,7 @@ import { actionCreators } from '../../redux';
 // Local Imports
 import './TodoTable.css';
 import TodoRow from './TodoRow';
+import LoadingSpinner from '../Loading/LoadingSpinner';
 
 export interface TodoList {
     completed: boolean,
@@ -23,8 +24,6 @@ export default function TodoTable() {
     const loading = useSelector((state: RootState) => {
         return state.loading;
     });
-
-    console.log(loading)
 
     useEffect(() => {
         getTodos();
@@ -51,7 +50,9 @@ export default function TodoTable() {
     return (
         <div style={{ overflowX: 'auto' }}>
             {loading ?
-                <h4 style={{ textAlign: 'center' }}>Loading...</h4>
+                <div className="center">
+                    <LoadingSpinner />
+                </div>
                 :
                 <table cellSpacing="0" className="center">
                     <thead>
