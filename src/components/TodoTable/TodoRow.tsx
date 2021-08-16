@@ -3,6 +3,7 @@ import { useState } from 'react';
 import moment from 'moment';
 // Local Imports
 import DeleteModal from '../Modals/DeleteModal';
+import EditModal from '../Modals/EditModal';
 // Types & Redux
 import { TodoList as Props } from '../TodoTable/TodoTable';
 import { useDispatch } from 'react-redux';
@@ -20,6 +21,7 @@ interface IProps {
 const TodoRow: React.FC<IProps> = ({ todo }) => {
 
     const [openDeleteModal, setOpenDeleteModal] = useState<IModalState["modalState"]>(false);
+    const [openEditModal, setOpenEditModal] = useState<IModalState["modalState"]>(false);
 
     const dispatch = useDispatch();
     const { toggleTodoComplete } = bindActionCreators(actionCreators, dispatch);
@@ -59,7 +61,10 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                     >
                         Delete
                     </button>
-                    <button className="edit">
+                    <button
+                        className="edit"
+                        onClick={() => setOpenEditModal(true)}
+                    >
                         Edit
                     </button>
                 </td>
@@ -69,6 +74,9 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                     setOpenDeleteModal={setOpenDeleteModal}
                     todo={todo}
                 />
+            }
+            {openEditModal &&
+                <EditModal />
             }
         </>
     )
