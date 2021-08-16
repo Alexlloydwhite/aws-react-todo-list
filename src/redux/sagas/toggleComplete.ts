@@ -9,13 +9,11 @@ export function* toggleComplete() {
 
 export function* createWorker(action: any) {
     try {
-        yield put({ type: ActionType.loading });
         yield call(
             axios.put,
             `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todo/${action.id}`,
             { completed: action.payload }
         );
-        yield put({ type: ActionType.getListOfTodos });
     } catch (error) { 
         console.log(error); 
         yield put({ type: ActionType.loadingError });
