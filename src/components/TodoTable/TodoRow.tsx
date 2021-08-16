@@ -76,7 +76,10 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                 />
             }
             {openEditModal &&
-                <EditModal />
+                <EditModal
+                    setOpenEditModal={setOpenEditModal}
+                    todo={todo}
+                />
             }
         </>
     )
