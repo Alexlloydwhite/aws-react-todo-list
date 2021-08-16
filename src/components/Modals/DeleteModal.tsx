@@ -1,9 +1,9 @@
-import React from 'react';
-import './DeleteModal.css';
+// Local Imports
+import './Modal.css';
 import { IModalState } from '../TodoTable/TodoRow';
 import { TodoList } from '../TodoTable/TodoTable';
+// Redux
 import { useDispatch } from 'react-redux';
-import { ActionType } from '../../redux/action-types/index';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../redux';
 
