@@ -1,7 +1,11 @@
+import './Modal.css';
+
 const EditModal = () => {
     return (
-        <div>
-            <h4>edit modal</h4>
+        <div className="modal">
+            <div className="modal-content">
+                
+            </div>   
         </div>
     );
 }
