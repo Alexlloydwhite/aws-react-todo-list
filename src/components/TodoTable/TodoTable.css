@@ -38,6 +38,17 @@ button {
     padding: 6px 12px;
 }
 
+.edit {
+    border-color: green;
+    color: green;
+    padding: 6px 12px;
+}
+
+.edit:hover {
+    background: green;
+    color: white;
+}
+
 .delete:hover {
     background: #f44336;
     color: white;

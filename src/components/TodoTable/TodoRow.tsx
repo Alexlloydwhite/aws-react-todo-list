@@ -54,9 +54,13 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
                 <td>
                     <button
                         className="delete"
+                        style={{ marginRight: 5 }}
                         onClick={() => setOpenDeleteModal(true)}
                     >
                         Delete
+                    </button>
+                    <button className="edit">
+                        Edit
                     </button>
                 </td>
             </tr>
