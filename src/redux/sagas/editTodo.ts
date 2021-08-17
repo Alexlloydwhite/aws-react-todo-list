@@ -12,7 +12,7 @@ export function* createWorker(action: any) {
         yield put({ type: ActionType.loading });
         yield call(
             axios.put,
-            `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/edit-todo/${action.id}`,
+            `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/todo/edit/${action.id}`,
             { editedTodo: action.edit }
         );
         yield put({ type: ActionType.getListOfTodos });
