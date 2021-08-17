@@ -15,7 +15,7 @@ export function* createWorker(action: any) {
             `https://oajwgks9xh.execute-api.us-east-2.amazonaws.com/dev/edit-todo/${action.id}`,
             { editedTodo: action.edit }
         );
-        yield put({ type: ActionType.loadingSuccess });
+        yield put({ type: ActionType.getListOfTodos });
     } catch (error) { 
         console.log(error); 
         yield put({ type: ActionType.loadingError });
