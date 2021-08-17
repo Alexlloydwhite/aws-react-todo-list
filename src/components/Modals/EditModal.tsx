@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../redux';
 import { IModalState } from '../TodoTable/TodoRow';
 import { TodoList } from '../TodoTable/TodoTable';
 import './Modal.css';
@@ -11,8 +14,12 @@ interface IProps {
 const EditModal: React.FC<IProps> = ({ todo, setOpenEditModal }) => {
     const [editState, setEditState] = useState<TodoList["todo"]>(todo.todo);
 
+    const dispatch = useDispatch();
+    const { editTodoTask } = bindActionCreators(actionCreators, dispatch);
+
     const submitEditTask = (id: string) => {
-        
+        setOpenEditModal(false);
+        editTodoTask(id, editState);
     }
 
     return (
