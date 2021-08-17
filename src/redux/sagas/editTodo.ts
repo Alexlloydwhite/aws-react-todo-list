@@ -2,7 +2,6 @@ import { takeEvery, call, put } from "@redux-saga/core/effects";
 import { ActionType } from '../action-types/index';
 import axios from 'axios';
 
-// Watcher
 export function* editTodo() {
     yield takeEvery(ActionType.editTask, createWorker);
 }

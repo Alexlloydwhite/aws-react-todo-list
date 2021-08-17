@@ -2,12 +2,10 @@ import { takeEvery, put, call, StrictEffect } from "@redux-saga/core/effects";
 import { ActionType } from '../action-types/index';
 import axios, { AxiosResponse } from 'axios';
 
-// Watcher
 export function* fetchTodos(): Generator<StrictEffect> {
     yield takeEvery(ActionType.getListOfTodos, createWorker);
 }
 
-// Worker 
 export function* createWorker() {
     try {
         yield put({ type: ActionType.loading });
