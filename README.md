@@ -37,7 +37,6 @@ How does someone use this application? Tell a user story here.
     - S3 
     - CloudWatch
 - Redux
-- Redux
     - Saga
     - Thunk
 - HTML5
