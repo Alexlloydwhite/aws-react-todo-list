@@ -37,3 +37,13 @@ export const deleteTodoTask = (todoId: string) => {
         });
     }
 }
+
+export const editTodoTask = (todoId: string, editState: string) => {
+    return(dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.editTask,
+            id: todoId,
+            edit: editState
+        });
+    }
+}

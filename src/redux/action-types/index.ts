@@ -6,5 +6,6 @@ export enum ActionType {
     toggleComplete= 'TOGGLE_COMPLETE',
     loading = 'LOADING',
     loadingSuccess = 'LOADING_SUCCESS',
-    loadingError = 'LOADING_ERROR'
+    loadingError = 'LOADING_ERROR',
+    editTask = 'SET_EDIT_TASK'
 }

@@ -37,6 +37,12 @@ interface DeleteTodoAction {
     id: string
 }
 
-export type Action = TodoAction | AddTodoAction |
+interface EditTodoAction {
+    type: ActionType.editTask,
+    id: string,
+    edit: string
+}
+
+export type Action = TodoAction | AddTodoAction | EditTodoAction |
     GetTodosAction | ToggleTodoCompleteAction | DeleteTodoAction |
     LoadingAction | LoadingSuccessAction | LoadingErrorAction;

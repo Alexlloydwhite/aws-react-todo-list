@@ -10,7 +10,11 @@ interface IProps {
 
 const EditModal: React.FC<IProps> = ({ todo, setOpenEditModal }) => {
     const [editState, setEditState] = useState<TodoList["todo"]>(todo.todo);
-    
+
+    const submitEditTask = (id: string) => {
+        
+    }
+
     return (
         <div className="modal">
             <div className="modal-content">
@@ -27,7 +31,10 @@ const EditModal: React.FC<IProps> = ({ todo, setOpenEditModal }) => {
                     >
                         Cancel
                     </button>
-                    <button className="btn cancel">
+                    <button
+                        className="btn cancel"
+                        onClick={() => submitEditTask(todo.id)}
+                    >
                         Submit
                     </button>
                 </div>
