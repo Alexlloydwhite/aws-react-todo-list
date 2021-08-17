@@ -29,7 +29,7 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
-- React
+- React (functional components with hooks)
 - TypeScript
 - AWS
     - Lambda
