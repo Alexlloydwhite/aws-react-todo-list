@@ -1,48 +1,55 @@
-import { ActionType } from '../action-types/index';
+import { ActionType } from "../action-types/index";
 
 interface TodoAction {
-    type: ActionType.listOfTodos,
-    payload: string
+  type: ActionType.listOfTodos;
+  payload: string;
 }
 
 interface LoadingAction {
-    type: ActionType.loading
+  type: ActionType.loading;
 }
 
 interface LoadingSuccessAction {
-    type: ActionType.loadingSuccess
+  type: ActionType.loadingSuccess;
 }
 
 interface LoadingErrorAction {
-    type: ActionType.loadingError
+  type: ActionType.loadingError;
 }
 
 interface AddTodoAction {
-    type: ActionType.addTodo,
-    payload: string
+  type: ActionType.addTodo;
+  payload: string;
 }
 
 interface GetTodosAction {
-    type: ActionType.getListOfTodos
+  type: ActionType.getListOfTodos;
 }
 
 interface ToggleTodoCompleteAction {
-    type: ActionType.toggleComplete,
-    id: string,
-    payload: boolean
+  type: ActionType.toggleComplete;
+  id: string;
+  payload: boolean;
 }
 
 interface DeleteTodoAction {
-    type: ActionType.deleteTask,
-    id: string
+  type: ActionType.deleteTask;
+  id: string;
 }
 
 interface EditTodoAction {
-    type: ActionType.editTask,
-    id: string,
-    edit: string
+  type: ActionType.editTask;
+  id: string;
+  edit: string;
 }
 
-export type Action = TodoAction | AddTodoAction | EditTodoAction |
-    GetTodosAction | ToggleTodoCompleteAction | DeleteTodoAction |
-    LoadingAction | LoadingSuccessAction | LoadingErrorAction;
+export type Action =
+  | TodoAction
+  | AddTodoAction
+  | EditTodoAction
+  | GetTodosAction
+  | ToggleTodoCompleteAction
+  | DeleteTodoAction
+  | LoadingAction
+  | LoadingSuccessAction
+  | LoadingErrorAction;
