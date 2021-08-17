@@ -33,11 +33,13 @@ How does someone use this application? Tell a user story here.
 - TypeScript
 - AWS
     - Lambda
-    - S3 
     - DynamoDB
+    - S3 
     - CloudWatch
 - Redux
-- Redux-Saga
+- Redux
+    - Saga
+    - Thunk
 - HTML5
 - CSS3
 - See package.json for full list of dependencies!
