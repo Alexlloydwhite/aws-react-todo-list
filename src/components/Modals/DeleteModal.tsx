@@ -34,7 +34,7 @@ const DeleteModal: React.FC<IProps> = ({ todo, setOpenDeleteModal }) => {
                         Cancel
                     </button>
                     <button
-                        className="btn delete"
+                        className="btn"
                         onClick={() => deleteTask(todo.id)}
                     >
                         Delete
