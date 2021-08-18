@@ -52,7 +52,7 @@ export default function TodoTable() {
   } else {
     return (
       <div>
-        {sortedTodoList && (
+        {sortedTodoList.length > 0 ? (
           <table cellSpacing="0" className="todo-table-wrapper">
             <thead>
               <tr className="todo-table-header">
@@ -67,6 +67,8 @@ export default function TodoTable() {
               ))}
             </tbody>
           </table>
+        ) : (
+          <h3 style={{ textAlign: "center" }}>Your to-do list is empty! Add a task to begin.</h3>
         )}
       </div>
     );
