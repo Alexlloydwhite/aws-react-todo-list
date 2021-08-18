@@ -32,6 +32,7 @@ Include one or two screen shots of your project here (optional). Remove if unuse
   - DynamoDB
   - S3
   - CloudWatch
+  - IAM
 - Redux
   - Saga
   - Thunk
