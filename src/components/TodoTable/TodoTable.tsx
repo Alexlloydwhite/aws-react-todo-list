@@ -38,7 +38,7 @@ export default function TodoTable() {
     return state.todos;
   });
 
-  const sortList = (a: any, b: any) => {
+  const sortList = (a: any, b: any): number => {
     const dateA = new Date(a.createdAt).getTime();
     const dateB = new Date(b.createdAt).getTime();
 
@@ -47,22 +47,28 @@ export default function TodoTable() {
 
   const sortedTodoList = todoList.sort(sortList);
 
-  return (
-    <div style={{ overflowX: "auto" }}>
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <table cellSpacing="0" className="center">
-          <thead>
-            <h2 style={{ marginLeft: "10px" }}>To-do List</h2>
-          </thead>
-          <tbody>
-            {sortedTodoList.map((todo: TodoList) => (
-              <TodoRow todo={todo} key={todo.id} />
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  );
+  if (loading) {
+    return <LoadingSpinner />;
+  } else {
+    return (
+      <div>
+        {sortedTodoList && (
+          <table cellSpacing="0" className="todo-table-wrapper">
+            <thead>
+              <tr className="todo-table-header">
+                <th colSpan={4}>
+                  <h2>To-do List</h2>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedTodoList.map((todo: TodoList) => (
+                <TodoRow todo={todo} key={todo.id} />
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    );
+  }
 }

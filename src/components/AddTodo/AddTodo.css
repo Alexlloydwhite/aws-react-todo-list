@@ -1,7 +1,15 @@
-.todoform {
+.todo-form {
   margin-top: 25px;
   margin-bottom: 25px;
   text-align: center;
+}
+
+@media only screen and (min-width: 1300px) {
+  .todo-form-wrapper {
+    width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .add-button {

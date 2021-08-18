@@ -34,7 +34,7 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
 
   return (
     <>
-      <tr>
+      <tr className="table-row">
         {todo.completed ? (
           <td>
             <input
@@ -55,7 +55,7 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
         )}
         <td>{todo.todo}</td>
         <td>{moment(todo.createdAt).format("MMMM Do YYYY, h:mm a")}</td>
-        <td>
+        <td className="todo-table-btn">
           <button
             className="delete"
             style={{ marginRight: 5 }}

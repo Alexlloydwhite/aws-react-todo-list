@@ -27,16 +27,18 @@ export default function AddTodo() {
   };
 
   return (
-    <form onSubmit={(e) => submitTodo(e)} className="todoform">
-      <input
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Add a new task"
-      />
-      <button className="add-btn default" type="submit">
-        Add
-      </button>
-      {error && <h4>Cannot add an empty task</h4>}
-    </form>
+    <div className="todo-form-wrapper">
+      <form onSubmit={(e) => submitTodo(e)} className="todo-form">
+        <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Add a new task"
+        />
+        <button className="add-btn default" type="submit">
+          Add
+        </button>
+        {error && <h4>Cannot add an empty task</h4>}
+      </form>
+    </div>
   );
 }
