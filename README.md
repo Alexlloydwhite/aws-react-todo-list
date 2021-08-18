@@ -4,7 +4,7 @@
 
 _Duration: 72 hours_
 
-The front end of this application was built with TypeScript, React (functional components with hooks), Redux, HTML5, and CSS3. While the serverless back end was built with AWS Lambda, AWS S3, AWS DynamoDB, AWS CloudWatch, and Node.
+The front end of this application was built with TypeScript, React (functional components with hooks), Redux, HTML5, and CSS3. While [the serverless back end](https://github.com/Alexlloydwhite/aws-rest-api) was built with AWS Lambda, AWS S3, AWS DynamoDB, AWS CloudWatch, and Node.
 
 My goals for this project: 
 - Solidify understanding of TypeScript 
