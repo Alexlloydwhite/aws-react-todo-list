@@ -6,7 +6,10 @@ _Duration: 72 hours_
 
 The front end of this application was built with TypeScript, React (functional components with hooks), Redux, HTML5, and CSS3. While the serverless back end was built with AWS Lambda, AWS S3, AWS DynamoDB, AWS CloudWatch, and Node.
 
-My goals for this project: - Solidify understanding of TypeScript - Build a Serverless backend with AWS - Practice vanilla CSS
+My goals for this project: 
+- Solidify understanding of TypeScript 
+- Build a Serverless backend with AWS 
+- Practice vanilla CSS
 
 To complete these goals I used TypeScript documentation, AWS Documentation, and a YouTube tutorial on how to start a Serverless backend with AWS.
 
