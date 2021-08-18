@@ -1,48 +1,47 @@
 // Local Imports
-import './Modal.css';
-import { IModalState } from '../TodoTable/TodoRow';
-import { TodoList } from '../TodoTable/TodoTable';
+import "./Modal.css";
+import { IModalState } from "../TodoTable/TodoRow";
+import { TodoList } from "../TodoTable/TodoTable";
 // Redux
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../redux';
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../redux";
 
 interface IProps {
-    todo: TodoList
-    setOpenDeleteModal: React.Dispatch<React.SetStateAction<IModalState["modalState"]>>
+  todo: TodoList;
+  setOpenDeleteModal: React.Dispatch<
+    React.SetStateAction<IModalState["modalState"]>
+  >;
 }
 
 const DeleteModal: React.FC<IProps> = ({ todo, setOpenDeleteModal }) => {
-    const dispatch = useDispatch();
-    const { deleteTodoTask } = bindActionCreators(actionCreators, dispatch);
-    
-    const deleteTask = (id: string) => {
-        setOpenDeleteModal(false);
-        deleteTodoTask(id);
-    }
+  const dispatch = useDispatch();
+  const { deleteTodoTask } = bindActionCreators(actionCreators, dispatch);
 
-    return (
-        <div className="modal">
-            <div className="modal-content">
-                <h3>Delete task?</h3>
-                <p>Once this task is deleted, you will be unable to retrieve it.</p>
-                <div className="btn-group">
-                    <button
-                        className="btn cancel"
-                        onClick={() => setOpenDeleteModal(false)}
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        className="btn"
-                        onClick={() => deleteTask(todo.id)}
-                    >
-                        Delete
-                    </button>
-                </div>
-            </div>
+  const deleteTask = (id: string) => {
+    setOpenDeleteModal(false);
+    deleteTodoTask(id);
+  };
+
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <h3>Delete task?</h3>
+        <p>Once this task is deleted, you will be unable to retrieve it.</p>
+        <div className="btn-group">
+          <button
+            className="btn cancel"
+            onClick={() => setOpenDeleteModal(false)}
+          >
+            Cancel
+          </button>
+          <button className="btn" onClick={() => deleteTask(todo.id)}>
+            Delete
+          </button>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default DeleteModal;

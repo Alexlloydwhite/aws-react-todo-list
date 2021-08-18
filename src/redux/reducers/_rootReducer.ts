@@ -4,7 +4,7 @@ import loadingReducer from "./loading.reducer";
 
 const rootReducer = combineReducers({
   todos: listOfTodos,
-  loading: loadingReducer
+  loading: loadingReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
