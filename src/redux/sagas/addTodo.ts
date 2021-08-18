@@ -1,12 +1,5 @@
-import {
-  takeEvery,
-  call,
-  put,
-  CallEffect,
-  PutEffect,
-  StrictEffect,
-} from "@redux-saga/core/effects";
-import { Action, AnyAction } from "redux";
+import { takeEvery, call, put, StrictEffect } from "@redux-saga/core/effects";
+import { Action } from "redux";
 import { ActionType } from "../action-types/index";
 import axios from "axios";
 
@@ -22,12 +15,7 @@ export function* addTodo(): Generator<StrictEffect> {
   yield takeEvery(ActionType.addTodo, createAddTodoWorker);
 }
 
-export function* createAddTodoWorker(action: PayloadAction): Generator<
-  // Yield types
-  CallEffect | PutEffect<AnyAction>,
-  // Return type
-  void
-> {
+export function* createAddTodoWorker(action: PayloadAction) {
   try {
     yield put({ type: ActionType.loading });
     yield call(
