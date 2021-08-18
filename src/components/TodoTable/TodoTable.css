@@ -48,6 +48,7 @@ button {
 
 .todo-table-btn {
   min-width: 160px;
+
 }
 
 @media only screen and (max-width: 800px) {

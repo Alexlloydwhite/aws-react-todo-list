@@ -54,18 +54,24 @@ const TodoRow: React.FC<IProps> = ({ todo }) => {
           </td>
         )}
         <td>{todo.todo}</td>
-        <td>{moment(todo.createdAt).format("MMMM Do YYYY, h:mm a")}</td>
+        <td>
+          <span style={{ float: "right" }}>
+            {moment(todo.createdAt).format("MMMM Do YYYY, h:mm a")}
+          </span>
+        </td>
         <td className="todo-table-btn">
-          <button
-            className="delete"
-            style={{ marginRight: 5 }}
-            onClick={() => setOpenDeleteModal(true)}
-          >
-            Delete
-          </button>
-          <button className="edit" onClick={() => setOpenEditModal(true)}>
-            Edit
-          </button>
+          <span style={{ float: "right" }}>
+            <button
+              className="delete"
+              style={{ marginRight: 5 }}
+              onClick={() => setOpenDeleteModal(true)}
+            >
+              Delete
+            </button>
+            <button className="edit" onClick={() => setOpenEditModal(true)}>
+              Edit
+            </button>
+          </span>
         </td>
       </tr>
       {openDeleteModal && (
