@@ -2,53 +2,47 @@
 
 ## Description
 
-_Duration: duration here_
+_Duration: 72 hours_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
+The front end of this application was built with TypeScript, React (functional components with hooks), Redux, HTML5, and CSS3. While the serverless back end was built with AWS Lambda, AWS S3, AWS DynamoDB, AWS CloudWatch, and Node.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
+My goals for this project: - Solidify understanding of TypeScript - Build a Serverless backend with AWS - Practice vanilla CSS
 
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
+To complete these goals I used TypeScript documentation, AWS Documentation, and a YouTube tutorial on how to start a Serverless backend with AWS.
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+The biggest challenge that I faced was configuring Redux with TypeScript! This was overcome by using Google, StackOverflow, and Redux documentation.
+
+I had a lot of fun making this application and I hope you enjoy it!
+
+To see the fully functional site, please visit: [DEPLOYED VERSION OF APP, HOSTED ON AWS AMPLIFY](https://main.d2jlzfmw2fqzuz.amplifyapp.com/)
 
 ## Screen Shot
 
 Include one or two screen shots of your project here (optional). Remove if unused.
-
-## Usage
-How does someone use this application? Tell a user story here.
-
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
-
 
 ## Built With
 
 - React (functional components with hooks)
 - TypeScript
 - AWS
-    - Lambda
-    - DynamoDB
-    - S3 
-    - CloudWatch
+  - Lambda
+  - DynamoDB
+  - S3
+  - CloudWatch
 - Redux
-    - Saga
-    - Thunk
+  - Saga
+  - Thunk
 - HTML5
 - CSS3
 - See package.json for full list of dependencies!
 
 ## Support
+
 If you have suggestions or issues, please email me at [alexlloydwhite@gmail.com](www.google.com)
 
 ## Thank You
 
 CEO, entrepreneur.
- Born in 1964.
- Jeffrey.
- Jeffrey Bezos.
+Born in 1964.
+Jeffrey.
+Jeffrey Bezos.
