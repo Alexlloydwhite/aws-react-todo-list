@@ -41,7 +41,7 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 
 ## Support
 
-If you have suggestions or issues, please email me at [alexlloydwhite@gmail.com](www.google.com)
+If you have suggestions or issues, please [email me](mailto:alexlloydwhite@gmail.com)
 
 ## Thank You
 
