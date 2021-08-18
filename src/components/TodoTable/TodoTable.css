@@ -10,6 +10,7 @@ table {
   margin-right: auto;
   overflow-x: auto;
   width: 800px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width: 800px) {
