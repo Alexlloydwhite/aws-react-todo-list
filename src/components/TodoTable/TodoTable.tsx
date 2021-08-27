@@ -17,7 +17,7 @@ export interface TodoList {
   id: string;
 }
 
-export default function TodoTable() {
+const TodoTable = () => {
   const dispatch = useDispatch();
   const { getTodos } = bindActionCreators(actionCreators, dispatch);
 
@@ -68,9 +68,13 @@ export default function TodoTable() {
             </tbody>
           </table>
         ) : (
-          <h3 style={{ textAlign: "center" }}>Your to-do list is empty! Add a task to begin.</h3>
+          <h3 style={{ textAlign: "center" }}>
+            Your to-do list is empty! Add a task to begin.
+          </h3>
         )}
       </div>
     );
   }
-}
+};
+
+export default TodoTable;

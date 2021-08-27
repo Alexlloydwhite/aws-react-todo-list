@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../redux";
 
-export default function AddTodo() {
+const AddTodo = () => {
   const dispatch = useDispatch();
   const { addTodo } = bindActionCreators(actionCreators, dispatch);
 
@@ -47,3 +47,5 @@ export default function AddTodo() {
     </div>
   );
 }
+
+export default AddTodo;
