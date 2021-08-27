@@ -1,4 +1,3 @@
-import React from "react";
 import AddTodo from "./AddTodo";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
@@ -26,7 +25,7 @@ test("it should check if input field get the value passed", () => {
   expect(input.value).toBe("feed cat");
 });
 
-test("adding task should clear input field", () => {
+test("it should clear input if add task is successful", () => {
   const { input, button } = setup();
   fireEvent.change(input, { target: { value: "feed cat" } });
   fireEvent.click(button);
