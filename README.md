@@ -2,7 +2,7 @@
 
 ## Description
 
-_Duration: 72 hours_
+_Duration: 1 week_
 
 The front end of this application was built with TypeScript, React (functional components with hooks), Redux, HTML5, and CSS3. While [the serverless back end](https://github.com/Alexlloydwhite/aws-rest-api) was built with AWS Lambda, AWS S3, AWS DynamoDB, AWS CloudWatch, and Node.
 
@@ -22,6 +22,10 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP, HOSTED
 ## Screen Shot
 
 Include one or two screen shots of your project here (optional). Remove if unused.
+
+## Testing
+
+The application scores highly on Google Lighthouse PageSpeed Insights. Additionally there are Jest tests used throughout the application.
 
 ## Built With
 
